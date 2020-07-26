@@ -65,6 +65,10 @@ def get_dist(log_ret: pd.DataFrame) -> np.ndarray:
     Return
     -------
         dist: (np.ndarray) : distances derived from log return correlations
+
+    References
+    ----------
+    [1] https://arxiv.org/pdf/1703.00485.pdf, page 2
     """
     corr = log_ret.corr().values
     dist = np.sqrt(2 * (1 - corr))
